@@ -1,0 +1,26 @@
+name: 'PR Error Logger Setup'
+description: 'Automatically sets up error logging for Next.js applications with GitHub PR integration'
+author: 'Your Organization'
+
+inputs:
+  github-token:
+    description: 'GitHub token for creating PR comments'
+    required: true
+  repository:
+    description: 'Repository name (defaults to current repository)'
+    required: false
+  owner:
+    description: 'Repository owner (defaults to current repository owner)'
+    required: false
+  setup-path:
+    description: 'Path where to setup the error logging (defaults to project root)'
+    required: false
+    default: '.'
+
+runs:
+  using: 'node20'
+  main: 'dist/action/index.js'
+
+branding:
+  icon: 'alert-triangle'
+  color: 'red'
