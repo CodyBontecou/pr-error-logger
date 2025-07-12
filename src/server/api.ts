@@ -1,4 +1,14 @@
-import { NextApiRequest, NextApiResponse } from 'next';
+// Types for Next.js API routes (should be available when Next.js is installed)
+interface NextApiRequest {
+  method?: string;
+  body: any;
+}
+
+interface NextApiResponse {
+  status(statusCode: number): NextApiResponse;
+  json(body: any): void;
+  setHeader(name: string, value: string | string[]): void;
+}
 import { GitHubService } from './github';
 import { ErrorLogEntry } from '../types';
 
